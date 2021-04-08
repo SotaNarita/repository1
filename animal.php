@@ -38,8 +38,10 @@ class MechaDog extends Dog
 
   public function proc($arg)
   {
-    $path = explode("/", explode(" ", $arg)[0]);
+    $path = explode("/", explode(" ", $arg)[0]);//この変数の内容が「$path = array ([0] => "GET")」になっているが、本当は「$path = array ([0] =>"GET" [1] => "bsd")」となるべき
+    echo var_dump($path) . PHP_EOL;
     array_shift($path);
+    echo var_dump($path) . PHP_EOL;
     if( is_null($path) ) {
       $keys = array();
       while (list($key, $val) = each($this->data)) {
@@ -54,6 +56,7 @@ class MechaDog extends Dog
     else {
       echo $path[0] . "=>" . $this->data[$path[0]] . PHP_EOL;
     }
+    echo var_dump($path) . PHP_EOL;
     echo '------4------' . PHP_EOL;
   }
 }
