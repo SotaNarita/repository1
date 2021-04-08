@@ -3,8 +3,7 @@ class Animal
 {
   public function bark()
   {
-    echo 'Yeah, it’s barking.' . PHP_EOL;
-    echo '------1------' . PHP_EOL;
+    echo 'Yeah, it’s barking.<br/>';
   }
 }
 
@@ -17,7 +16,6 @@ class Dog extends Animal
   {
     $this->name = $name;
     $this->age = $age;
-    echo '------2------' . PHP_EOL;
   }
 }
 
@@ -33,16 +31,14 @@ class MechaDog extends Dog
       'bsd' => 'mit',
       'chef' => 'apache'
     );
-    echo '------3------' . PHP_EOL;
   }
 
   public function proc($arg)
   {
-    $path = explode("/", explode(" ", $arg)[0]);//この変数の内容が「$path = array ([0] => "GET")」になっているが、本当は「$path = array ([0] =>"GET" [1] => "bsd")」となるべき
-    echo var_dump($path) . PHP_EOL;
+    $prepath = str_replace (" /", "/", $arg);
+    $path = explode("/", explode(" ", $prepath)[0]);
     array_shift($path);
-    echo var_dump($path) . PHP_EOL;
-    if( is_null($path) ) {
+    if( is_null($path) ){
       $keys = array();
       while (list($key, $val) = each($this->data)) {
         array_push($keys, $key);
@@ -53,16 +49,14 @@ class MechaDog extends Dog
       $this->data[$path[0]] = $path[1];
       echo $path[1] . PHP_EOL;
     }
-    else {
-      echo $path[0] . "=>" . $this->data[$path[0]] . PHP_EOL;
+    else{
+      echo $path[0] . "=>" . $this->data[$path[0]] . "<br/>";
     }
-    echo var_dump($path) . PHP_EOL;
-    echo '------4------' . PHP_EOL;
   }
 }
 
 $mdog = new MechaDog('tom');
 $mdog->bark();
-echo $mdog->name . PHP_EOL;
-echo $mdog->age . PHP_EOL;
+echo $mdog->name . "<br/>";
+echo $mdog->age . "<br/>";
 $mdog->proc("GET /bsd HTTP/1.1");
