@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#79427DA5"
+    android:clickable="false"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/followersAmount"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:background="#00FFFFFF"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/followersAmount"
+        android:textColor="#2F2BBA"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/photoAmount"
+        app:layout_constraintStart_toEndOf="@+id/photoAmount"
+        app:layout_constraintTop_toTopOf="@+id/photoAmount"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/follow"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="#2196F3"
+        android:gravity="center"
+        android:text="@string/follow_up"
+        android:textColor="#FFFFFF"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/photoAmount"
+        app:layout_constraintStart_toStartOf="@+id/photoAmount"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.755" />
+
+    <Button
+        android:id="@+id/disFollow"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="#2196F3"
+        android:gravity="center"
+        android:text="@string/follow_down"
+        android:visibility="visible"
+        app:iconTint="#190101"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/follow"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/follow"
+        app:layout_constraintTop_toBottomOf="@+id/follow"
+        app:layout_constraintVertical_bias="0.083"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/photoAmount"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:background="#00E11F1F"
+        android:gravity="center"
+        android:text="@string/photosAmount"
+        android:textAllCaps="false"
+        android:textColor="#2F2BBA"
+        android:textColorHighlight="#4135BC"
+        android:textColorLink="#FFFFFF"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.436" />
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:background="#00C31C1C"
+        android:gravity="center"
+        android:text="@string/rate"
+        android:textColor="#2F2BBA"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/photoAmount"
+        app:layout_constraintEnd_toStartOf="@+id/photoAmount"
+        app:layout_constraintTop_toTopOf="@+id/photoAmount"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="80dp"
+        android:background="#00932323"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/userName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445"
+        app:srcCompat="@android:mipmap/sym_def_app_icon"
+        tools:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#0003A9F4"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/username"
+        android:textColor="#2F2BBA"
+        android:textColorLink="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <TextView
+        android:id="@+id/titleRating"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:gravity="center"
+        android:text="@string/rating"
+        app:layout_constraintBottom_toBottomOf="@+id/titlePhotos"
+        app:layout_constraintEnd_toStartOf="@+id/titlePhotos"
+        app:layout_constraintStart_toStartOf="@+id/rating"
+        app:layout_constraintTop_toBottomOf="@+id/rating"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/titlePhotos"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/photos"
+        app:layout_constraintBottom_toTopOf="@+id/follow"
+        app:layout_constraintEnd_toEndOf="@+id/photoAmount"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/photoAmount"
+        app:layout_constraintTop_toBottomOf="@+id/photoAmount"
+        app:layout_constraintVertical_bias="0.008" />
+
+    <TextView
+        android:id="@+id/titleFollowers"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:gravity="center"
+        android:text="@string/followers"
+        app:layout_constraintBottom_toBottomOf="@+id/titlePhotos"
+        app:layout_constraintEnd_toEndOf="@+id/followersAmount"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/titlePhotos"
+        app:layout_constraintTop_toBottomOf="@+id/followersAmount"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
