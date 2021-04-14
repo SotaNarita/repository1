@@ -1,0 +1,7 @@
+#!/bin/bash
+ampm="`date '+%p'`"
+TODAY="`date '+%Y/%m/%d'`"
+NOW="`date '+%R'`"
+if [ $ampm = AM ] ; then ls -la
+else echo "$TODAY"_"$NOW"
+fi
